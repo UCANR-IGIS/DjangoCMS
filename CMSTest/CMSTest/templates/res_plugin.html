@@ -1,0 +1,17 @@
+{% load cms_tags %}
+<div id="resCard" class="col-md-8 pt-4">
+
+
+    <div class="card mb-4 clearfix">
+
+        <h2 class="card-header">{{ instance.name }}</h2>
+        <div class="card-body">
+        {% autoescape off %}
+            {% for item in instance.get_relations %}
+            {{ item|safe }}
+
+            {% endfor %}
+        {% endautoescape %}
+        </div>
+    </div>
+</div>

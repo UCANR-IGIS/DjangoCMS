@@ -1,0 +1,19 @@
+{% block content %}
+    {% for item in ev_objects %}
+        <div id="resCard" class="col-md-8 pt-4">
+
+
+    <div class="card mb-4 clearfix">
+
+        <h2 class="card-header">{{ item.name }}</h2>
+         <div class="card-body">
+        {%  for linkItem in evLink_objects %}
+           {% if item.evid == linkItem.evid %}
+               <a href={{ linkItem.link }}>{{ linkItem.linkdesc }}</a><br>
+           {% endif %}
+            {% endfor %}
+         </div>
+    </div>
+        </div>
+    {% endfor %}
+{% endblock %}

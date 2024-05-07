@@ -1,0 +1,19 @@
+{% block content %}
+    {% for item in res_objects %}
+        <div id="resCard" class="col-md-8 pt-4">
+
+
+    <div class="card mb-4 clearfix">
+
+        <h2 class="card-header">{{ item.name }}</h2>
+         <div class="card-body">
+        {%  for linkItem in resLink_objects %}
+           {% if item.resid == linkItem.resid %}
+               <a href={{ linkItem.link }}>{{ linkItem.linkdesc }}</a><br>
+           {% endif %}
+            {% endfor %}
+         </div>
+    </div>
+        </div>
+    {% endfor %}
+{% endblock %}
